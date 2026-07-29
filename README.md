@@ -75,7 +75,10 @@ I will use AI to debug faster by pasting errors, to explain new algorithms, and 
 
 **Q4: What was the most valuable thing you learned?**
 That error messages tell you exactly what's wrong. When a method repeats 1000 times in the stack trace, it's infinite recursion. Also, asking specific questions to AI gives better answers.
+
 ## Exercise 4: Knowing Where to Start
+
+
 
 ### Part 1: Understanding Project Structure
 **Prompt used:**
