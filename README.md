@@ -38,3 +38,25 @@ The method gives points based on priority: LOW=1, MEDIUM=2, HIGH=4, URGENT=6. It
 **Q3: How could this algorithm be improved for a real-world application?**
 It could be improved by adding more factors like task category, estimated time to complete, or letting users set custom weights. Also, instead of sorting the original list, it should return a new sorted list to avoid side effects.
 
+## Exercise 3: Error Diagnosis Challenge
+
+### Bug Selected: StackOverflowException in FactorialCalculator.java
+
+**1. Error Description:**
+`java.lang.StackOverflowError` means the program crashed because the call stack got full. The error kept repeating `at com.example.recursion.Factorial` over and over.
+
+**2. Root Cause:**
+The `calculateFactorial` method has no base case. It calls itself forever: `return num * calculateFactorial(num)` without ever stopping or making `num` smaller.
+
+**3. Suggested Solution:**
+Add a base case and decrease num in each recursive call.
+```java
+public static int calculateFactorial(int num) {
+    // Base case - stops the recursion
+    if (num <= 1) {
+        return 1;
+    }
+    // Recursive case - gets closer to base case
+    return num * calculateFactorial(num - 1);
+}
+
