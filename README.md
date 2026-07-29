@@ -131,3 +131,5 @@ I would start by asking AI for a high-level overview before reading any code.
 **6. What additional tools or resources would complement the AI prompting approach?**
 A debugger to step through code and a diagram tool to visualize the classes.
 
+
+
