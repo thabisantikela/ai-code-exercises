@@ -78,9 +78,8 @@ That error messages tell you exactly what's wrong. When a method repeats 1000 ti
 
 ## Exercise 4: Knowing Where to Start
 
-
-
 ### Part 1: Understanding Project Structure
+
 **Prompt used:**
 You are onboarding a new developer to this Java Task Manager project. Based on the TaskManagerCli.java file, describe the project structure, technology stack, main components, and entry point.
 
