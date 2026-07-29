@@ -75,5 +75,59 @@ I will use AI to debug faster by pasting errors, to explain new algorithms, and 
 
 **Q4: What was the most valuable thing you learned?**
 That error messages tell you exactly what's wrong. When a method repeats 1000 times in the stack trace, it's infinite recursion. Also, asking specific questions to AI gives better answers.
+## Exercise 4: Knowing Where to Start
 
+### Part 1: Understanding Project Structure
+**Prompt used:**
+You are onboarding a new developer to this Java Task Manager project. Based on the TaskManagerCli.java file, describe the project structure, technology stack, main components, and entry point.
+
+**AI's Answer:**
+This is a single-file Java CLI application. Tech stack: Java SE, uses ArrayList for in-memory storage, Scanner for input. Main components: Task class stores task data. TaskManagerCLI class runs the menu, handles user input, and manages the task list. Entry point: main() method in TaskManagerCLI.
+
+### Part 2: Finding Feature Implementation
+**Prompt used:**
+I need to add a feature to export tasks to CSV. Where should I implement this in the codebase?
+
+**AI's Answer:**
+Add a new method `exportToCSV()` in the TaskManagerCLI class. Add a new menu option 4 in main() to call it. Loop through the tasks ArrayList and write each task to a .csv file using FileWriter.
+
+### Part 3: Understanding Domain Model
+**Prompt used:**
+What are the core domain models and business concepts in this Task Manager?
+
+**AI's Answer:**
+Core domain model is Task. It has properties: name, priority, status. Business concepts: Tasks can have priority LOW/MEDIUM/HIGH and status PENDING/DONE. TaskManagerCLI manages a collection of Task objects.
+
+### Part 4: Business Rule + Reflection
+**Prompt used:**
+
+    New business rule: Tasks overdue for more than 7 days should be automatically marked ABANDONED unless HIGH priority. How would I implement this?
+**AI's Answer:**
+1. Add a `dueDate` LocalDate field to Task class and add ABANDONED to status. 
+2. In TaskManagerCLI, before listing tasks, loop through all tasks. 
+3. If task.dueDate is older than 7 days AND priority != HIGH, set status = ABANDONED.
+4. Use LocalDate.now() to compare dates.
+
+**My Reflection:**
+AI made it way faster to understand the codebase. Instead of reading every line, I asked about structure, features, and domain first. The Domain Model prompt was most helpful because it showed me Task is the center of everything. Next time I will start with AI overview before diving into code.
+
+## Final Discussion and Reflection
+
+**1. How did the AI prompts help you understand where and how to implement this feature?**
+The AI prompts helped me break the codebase into parts. I could ask about structure and domain models instead of guessing.
+
+**2. What aspects of the codebase are you still unsure about?**
+I am still unsure how to automatically check for overdue tasks without the user running the program.
+
+**3. What would be your next steps to deepen your understanding?**
+I would add comments to the code and try to implement the overdue business rule myself.
+
+**4. Which prompt was most helpful for building your understanding?**
+The "Understanding Domain Models" prompt was most helpful because it showed me Task is the core of the app.
+
+**5. What would you do differently next time you approach an unfamiliar codebase?**
+I would start by asking AI for a high-level overview before reading any code.
+
+**6. What additional tools or resources would complement the AI prompting approach?**
+A debugger to step through code and a diagram tool to visualize the classes.
 
