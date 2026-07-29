@@ -1,31 +1,15 @@
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
+public static void main(String[] args) {
+        List<Task> tasks = new ArrayList<>();
+        tasks.add(new Task("Submit report", TaskPriority.HIGH, LocalDate.now().minusDays(1), false));
+        tasks.add(new Task("Buy groceries", TaskPriority.LOW, LocalDate.now().plusDays(3), false));
+        tasks.add(new Task("Doctor appointment", TaskPriority.URGENT, LocalDate.now(), false));
+        tasks.add(new Task("Read book", TaskPriority.MEDIUM, LocalDate.now().plusDays(7), true));
 
-public class AlgorithmDeconstruction {
+        List<Task> sortedTasks = sortTasksByPriority(tasks);
 
-    public enum TaskPriority {
-        LOW, MEDIUM, HIGH, URGENT
-    }
-
-    public static class Task {
-        String title;
-        TaskPriority priority;
-        LocalDate dueDate;
-        boolean isCompleted;
-
-        public Task(String title, TaskPriority priority, LocalDate dueDate, boolean isCompleted) {
-            this.title = title;
-            this.priority = priority;
-            this.dueDate = dueDate;
-            this.isCompleted = isCompleted;
+        System.out.println("Tasks sorted by priority:");
+        for (Task task : sortedTasks) {
+            System.out.println(task.title + " - Score: " + calculateTaskScore(task));
         }
     }
-
-    // STEP 3: calculateTaskScore goes here
-
-    // STEP 4: sortTasksByPriority goes here
-
-    // STEP 5: main method goes here
-
-} // end of class
+}
