@@ -1,4 +1,64 @@
-public static void main(String[] args) {
+import java.time.LocalDate
+import java.util.ArrayList;
+import java.util.List;
+
+public class AlgorithmDeconstruction {
+
+    public enum TaskPriority {
+        LOW, MEDIUM, HIGH, URGENT
+    }
+
+    public static class Task {
+        String title;
+        TaskPriority priority;
+        LocalDate dueDate;
+        boolean isCompleted;
+
+        public Task(String title, TaskPriority priority, LocalDate dueDate, boolean isCompleted) {
+            this.title = title;
+            this.priority = priority;
+            this.dueDate = dueDate;
+            this.isCompleted = isCompleted;
+        }
+    }
+
+    public static int calculateTaskScore(Task task) {
+        int score = 0;
+        
+        // 1. Base score from priority
+        switch (task.priority) {
+            case LOW: score += 1; break;
+            case MEDIUM: score += 2; break;
+            case HIGH: score += 4; break;
+            case URGENT: score += 6; break;
+        }
+        
+        // 2. Bonus for due date
+        if (!task.isCompleted && task.dueDate.isBefore(LocalDate.now())) {
+           if (!task.isCompleted && task.dueDate.isBefore(LocalDate.now())) {
+            score += 10; // overdue
+        } else if (!task.isCompleted && task.dueDate.isEqual(LocalDate.now())) {
+            score += 5; // due today
+        } 
+        
+        
+        if (task.isCompleted) {
+            score -= 50;
+        }
+        
+        return score;
+    }
+
+    public static List<Task> sortTasksByPriority(List<Task> tasks) {
+        tasks.sort((task1, task2) -> {
+            int score1 = calculateTaskScore(task1);
+            int score2 = calculateTaskScore(task2);
+            return Integer.compare(score2, score1); // higher score first
+        });
+        return tasks;
+    }
+
+    public static void main(String[] args) {
         List<Task> tasks = new ArrayList<>();
         tasks.add(new Task("Submit report", TaskPriority.HIGH, LocalDate.now().minusDays(1), false));
         tasks.add(new Task("Buy groceries", TaskPriority.LOW, LocalDate.now().plusDays(3), false));
