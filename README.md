@@ -60,3 +60,18 @@ public static int calculateFactorial(int num) {
     return num * calculateFactorial(num - 1);
 }
 
+
+
+## Reflection Questions
+
+**Q1: How has your approach to using AI for code changed?**
+I used to ask AI to just write code for me. Now I use it to explain errors, debug, and understand why code works. I use it as a learning partner.
+
+**Q2: What challenges did you face and how did you overcome them?**
+Understanding recursion and StackOverflow was hard. I overcame it by asking AI to explain the stack trace and what a "base case" means.
+
+**Q3: How will you apply these skills in your projects?**
+I will use AI to debug faster by pasting errors, to explain new algorithms, and to help me document my code better for my team.
+
+**Q4: What was the most valuable thing you learned?**
+That error messages tell you exactly what's wrong. When a method repeats 1000 times in the stack trace, it's infinite recursion. Also, asking specific questions to AI gives better answers.
