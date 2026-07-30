@@ -139,7 +139,55 @@ I would start by asking AI for a high-level overview before reading any code.
 A debugger to step through code and a diagram tool to visualize the classes.
 
 
+## Exercise 5 : Code Documentation
 
+In this exercise we practiced using AI to generate documentation for undocumented code by using 2 different prompts.
+
+### Part 1: Code Selection
+**Chosen method:** `main` from TaskManagerCLI.java
+**Reason:** It's the entry point with a while loop, user input, and branching logic. Good to test AI's ability to explain control flow.
+
+### Part 2: Prompt 1 - Comprehensive Documentation
+**Prompt used:**
+`Please create comprehensive documentation for the following java method: [code]`
+
+**AI Summary:**
+Described the method purpose, parameters `String[] args`, dependencies on static `scanner` and `tasks`, menu flow, example usage, and notes about no persistence.
+
+### Part 3: Prompt 2 - Intent and Logic
+**Prompt used:**
+`I need help documenting the intent and logic of the following java method: [code]`
+
+**AI Summary:**
+1. **Intent**: Implements a simple interactive CLI task manager. Add tasks, view tasks, exit. No persistence.
+2. **Logic Breakdown**: 
+   - Phase 1: Startup banner
+   - Phase 2: Infinite while(true) loop
+   - Phase 3: Display menu and get input
+   - Phase 4: Branch with if-else: "1"=Add, "2"=List, "3"=Exit, else=Invalid
+3. **Assumptions**: Needs `scanner: Scanner` and `tasks: List<Task>` initialized. Needs `Task(String)` and `Task.toString()`
+4. **Edge Cases**: Empty task name accepted, whitespace accepted, scanner close = exception, invalid input handled
+5. **Improvements**: Fix "Inl." typo to "1.", add input validation, use switch instead of if-else, extract methods, close scanner
+
+### Part 4: Final Combined Documentation
+The `main` method is the entry point for the TaskManager CLI. It runs an infinite loop to present a text menu and process user commands.
+
+**Core Flow:**
+1. Print startup message
+2. Loop: Show menu "1. Add 2. List 3. Exit"
+3. Read choice with `scanner.nextLine()`
+4. If "1": Read task name, create `new Task(name)`, add to list
+5. If "2": Check if empty, else print numbered list
+6. If "3": Print goodbye and `break`
+7. Else: Print "Invalid choice"
+
+**Dependencies:** `private static Scanner scanner`, `private static List<Task> tasks`
+**Key Limitations:** In-memory only, no validation for empty names, menu typo "Inl."
+
+### Part 5: Reflection
+- **What was challenging for AI:** The AI had to assume the `Task` class structure and couldn't see the class-level variables. It also initially missed the "Inl." typo.
+- **What info I had to add:** I needed to clarify that `scanner` and `tasks` are static fields, and that tasks are not saved to file.
+- **How I'd use this in real project:** This is perfect for legacy code. Instead of reading 30 lines of if-else, a new developer can read this doc and understand the CLI in 1 minute. I would use AI this way for any code with no comments.
 
 
 
