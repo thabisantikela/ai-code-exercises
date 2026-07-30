@@ -1,0 +1,34 @@
+# Exercise 8: AI Solution Verification Challenge
+
+## Scenario Chosen
+**Buggy sorting function** - A mergeSort implementation with a subtle bug
+
+## Buggy Code Given
+```javascript
+// Buggy sorting function
+function mergeSort(arr) {
+  if (arr.length <= 1) return arr;
+  
+  const mid = Math.floor(arr.length / 
+  const left = mergeSort(arr.slice(0,
+  const right = mergeSort(arr.slice(m
+  
+  return merge(left, right);
+}
+
+function merge(left, right) {
+  let result = [];
+  let i = 0;
+  let j = 0;
+
+  while (i < left.length && j < right
+    if (left[i] < right[j]) {
+      result.push(left[i]);
+      i++;
+    } else {
+      result.push(right[j]);
+      j++;
+    }
+  }
+  return result;
+}
