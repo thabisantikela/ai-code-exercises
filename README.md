@@ -206,7 +206,7 @@ The `main` method is the entry point for the TaskManager CLI. It runs an infinit
 - **What info I had to add:** I needed to clarify that `scanner` and `tasks` are static fields, and that tasks are not saved to file.
 - **How I'd use this in real project:** This is perfect for legacy code. Instead of reading 30 lines of if-else, a new developer can read this doc and understand the CLI in 1 minute. I would use AI this way for any code with no comments.
 
-## Exercise 6: Task Manager App
+## Exercise 6: README Documentation 
 
 **Files:** `Exercise6/Task.java` and `Exercise6/TaskManager.java`
 
