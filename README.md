@@ -243,3 +243,13 @@ java Exercise6.TaskManager
 - Used AI to generate pytest unit tests  
 - Verified and documented the testing process
 - Final project for WTC_AI Curriculum
+
+## Exercise 9: AI-Assisted Project Development
+
+**File:** [AI_Assisted_Project.md](Exercise9/AI_Assisted_Project.md)
+
+**What it does:**
+- Built a Command Line To-Do List with AI assistance
+- AI generated both code and pytest tests
+- Verified, tested, and debugged the final project
+- Final project for WTC_AI Curriculum
