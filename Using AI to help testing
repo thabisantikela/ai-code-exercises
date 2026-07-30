@@ -1,0 +1,22 @@
+# Exercise 9: AI-Assisted Project Development - Testing Focus
+
+## Project Chosen
+**Project Name:** Calculator
+**Description:** A simple Python calculator that can add, subtract, multiply, and divide numbers.
+
+## Project Code
+```python
+# calculator.py
+def add(a, b):
+    return a + b
+
+def subtract(a, b):
+    return a - b
+
+def multiply(a, b):
+    return a * b
+
+def divide(a, b):
+    if b == 0:
+        return "Error: Cannot divide by zero"
+    return a / b
