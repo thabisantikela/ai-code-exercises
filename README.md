@@ -222,3 +222,14 @@ The `main` method is the entry point for the TaskManager CLI. It runs an infinit
 ```bash
 javac Exercise6/Task.java Exercise6/TaskManager.java
 java Exercise6.TaskManager
+
+
+## Exercise 8 : My AI Solution Verification Challenge Solution
+
+**File:** [AI_Solution_Verification.md](Exercise8/AI_Solution_Verification.md)
+
+**What it does:**
+- Verified and fixed a buggy mergeSort function
+- Applied 3 verification strategies: Collaborative testing, Alternative approaches, Critical code review
+- Documented bugs, test cases, and final working solution
+- Built for the WTC_AI Curriculum AI Solution Verification Challenge
