@@ -1,0 +1,17 @@
+# todo.py - Command Line To-Do List
+tasks = []
+
+def add_task(task):
+    tasks.append(task)
+    return f"Added: {task}"
+
+def view_tasks():
+    if not tasks:
+        return "No tasks yet!"
+    return "\n".join([f"{i+1}. {task}" for i, task in enumerate(tasks)])
+
+def delete_task(num):
+    if 1 <= num <= len(tasks):
+        removed = tasks.pop(num-1)
+        return f"Deleted: {removed}"
+    return "Invalid task number"
