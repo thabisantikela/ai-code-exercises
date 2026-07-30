@@ -220,4 +220,7 @@ The `main` method is the entry point for the TaskManager CLI. It runs an infinit
 javac Exercise6/Task.java Exercise6/TaskManager.java
 java Exercise6.TaskManager
 
-
+## Exercise 7: Performance Optimization
+**Optimization:** Changed inner loop to `for j in range(i + 1, n)` to avoid duplicate pairs  
+**Result:** Cut comparisons from 25M to 12.5M = ~50% faster  
+**File:** [inventory_analysis_optimized.py](Exercise7/inventory_analysis_optimized.py)
