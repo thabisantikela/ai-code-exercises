@@ -1,0 +1,26 @@
+# test_todo.py
+import pytest
+from todo import add_task, view_tasks, delete_task, tasks
+
+def test_add_task():
+    tasks.clear()
+    assert add_task("Buy milk") == "Added: Buy milk"
+    assert len(tasks) == 1
+
+def test_view_tasks():
+    tasks.clear()
+    add_task("Task 1")
+    add_task("Task 2")
+    result = view_tasks()
+    assert "1. Task 1" in result
+    assert "2. Task 2" in result
+
+def test_delete_task():
+    tasks.clear()
+    add_task("Task 1")
+    assert delete_task(1) == "Deleted: Task 1"
+    assert len(tasks) == 0
+
+def test_delete_invalid():
+    tasks.clear()
+    assert delete_task(5) == "Invalid task number"
