@@ -162,6 +162,23 @@ Described the method purpose, parameters `String[] args`, dependencies on static
 1. **Intent**: Implements a simple interactive CLI task manager. Add tasks, view tasks, exit. No persistence.
 2. **Logic Breakdown**: 
    - Phase 1: Startup banner
+
+
+## Exercise 7: Performance Optimization Challenge
+
+**Scenario:** Slow Code Analysis - Python
+
+**The Problem:** 
+Finding product pairs took 20-30 seconds for 5000 products because it checked every product with every other product.
+
+**The Fix:** 
+Changed the code to avoid checking duplicates and skip unnecessary loops.
+
+**The Result:** 
+Before: ~25 seconds
+After: ~0.5 seconds
+
+**File:** [inventory_analysis_optimized.py](Exercise7/inventory_analysis_optimized.py)
    - Phase 2: Infinite while(true) loop
    - Phase 3: Display menu and get input
    - Phase 4: Branch with if-else: "1"=Add, "2"=List, "3"=Exit, else=Invalid
