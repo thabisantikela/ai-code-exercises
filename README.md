@@ -204,7 +204,10 @@ The `main` method is the entry point for the TaskManager CLI. It runs an infinit
 ### Part 5: Reflection
 - **What was challenging for AI:** The AI had to assume the `Task` class structure and couldn't see the class-level variables. It also initially missed the "Inl." typo.
 - **What info I had to add:** I needed to clarify that `scanner` and `tasks` are static fields, and that tasks are not saved to file.
-- **How I'd use this in real project:** This is perfect for legacy code. Instead of reading 30 lines of if-else, a new developer can read this doc and understand the CLI in 1 minute. I would use AI this way for any code with no comments.
+- **How I'd use this in real project:** This is perfect for legacy code. Instead of reading 30 lines of if-else, a new developer can read this doc and understand the CLI in 1 minute. I would use AI this way for any code with no comments.## Exercise 7: Performance Optimization
+**Optimization:** Changed inner loop to `for j in range(i + 1, n)` to avoid duplicate pairs  
+**Result:** Cut comparisons from 25M to 12.5M = ~50% faster  
+**File:** [inventory_analysis_optimized.py](Exercise7/inventory_analysis_optimized.py)
 
 ## Exercise 6: README Documentation 
 
@@ -219,8 +222,3 @@ The `main` method is the entry point for the TaskManager CLI. It runs an infinit
 ```bash
 javac Exercise6/Task.java Exercise6/TaskManager.java
 java Exercise6.TaskManager
-
-## Exercise 7: Performance Optimization
-**Optimization:** Changed inner loop to `for j in range(i + 1, n)` to avoid duplicate pairs  
-**Result:** Cut comparisons from 25M to 12.5M = ~50% faster  
-**File:** [inventory_analysis_optimized.py](Exercise7/inventory_analysis_optimized.py)
