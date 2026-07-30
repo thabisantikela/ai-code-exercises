@@ -233,3 +233,13 @@ java Exercise6.TaskManager
 - Applied 3 verification strategies: Collaborative testing, Alternative approaches, Critical code review
 - Documented bugs, test cases, and final working solution
 - Built for the WTC_AI Curriculum AI Solution Verification Challenge
+
+## My AI-Assisted Testing Project Exercise 9
+
+**File:** [AI_Assisted_Testing.md](Exercise9/AI_Assisted_Testing.md)
+
+**What it does:**
+- Built a Calculator project
+- Used AI to generate pytest unit tests  
+- Verified and documented the testing process
+- Final project for WTC_AI Curriculum
