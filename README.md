@@ -101,6 +101,11 @@ What are the core domain models and business concepts in this Task Manager?
 Core domain model is Task. It has properties: name, priority, status. Business concepts: Tasks can have priority LOW/MEDIUM/HIGH and status PENDING/DONE. TaskManagerCLI manages a collection of Task objects.
 
 ### Part 4: Business Rule + Reflection
+
+In this exercise we learned how to approach an unfamiliar codebase. The goal was to understand 
+project structure, identify the entry point of the program, and develop a strategy for 
+navigating new projects efficiently.
+
 **Prompt used:**
 
     New business rule: Tasks overdue for more than 7 days should be automatically marked ABANDONED unless HIGH priority. How would I implement this?
