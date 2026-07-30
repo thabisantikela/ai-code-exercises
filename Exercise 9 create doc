@@ -1,0 +1,53 @@
+# Exercise 9: AI-Assisted Project Development
+
+## Project Chosen
+**Project Name:** Command Line To-Do List
+**Description:** A simple Python app to Add, View, and Delete tasks. Tasks are stored in a list during runtime.
+
+## Planning with AI
+**Prompt I gave AI:**
+"Build me a command line To-Do List using Python. Include functions to add task, view tasks, delete task."
+
+**AI's Project Plan:**
+1. Create a list to store tasks
+2. Function: add_task(task)
+3. Function: view_tasks()
+4. Function: delete_task(number)
+
+## Development with AI
+**Feature 1: Core Functions**
+- **Prompt:** "Write Python functions for add, view, delete for a todo list"
+- **AI Code:** See [todo.py](todo.py)
+- **Issues Found:** None
+- **Fix:** N/A
+
+**Feature 2: Unit Tests**
+- **Prompt:** "Write pytest tests for my todo.py. Test adding, viewing, deleting, and invalid input"
+- **AI Code:** See [test_todo.py](test_todo.py)
+- **Issues Found:** AI forgot to clear the tasks list between tests
+- **Fix:** Added `tasks.clear()` in each test
+
+## Verification & Testing
+**Test 1:** Add a task → **Result:** Pass ✅
+**Test 2:** View multiple tasks → **Result:** Pass ✅
+**Test 3:** Delete valid task → **Result:** Pass ✅
+**Test 4:** Delete invalid number → **Result:** Pass ✅
+**Command used:** `pytest test_todo.py`
+
+## Reflection Questions
+- **How did AI help speed up development?**
+  AI wrote both the app and all tests in under 2 minutes. I would have taken 30 min.
+
+- **What did AI get wrong that you had to fix?**
+  AI didn’t reset the task list between tests, so tests failed. I added `tasks.clear()`.
+
+- **What would you do differently next time with AI?**
+  I’ll ask AI to also explain the code line by line so I understand it better.
+
+## Final Project Files
+- **Main Code:** [todo.py](todo.py)
+- **Test Code:** [test_todo.py](test_todo.py)
+- **Demo:** Ran `pytest` and got `4 passed`
+
+## What I Learned
+Building with AI is like pair programming. AI codes fast, but I’m still the one who tests, debugs, and makes sure it actually works.
